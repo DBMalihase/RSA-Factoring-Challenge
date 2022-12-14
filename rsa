@@ -20,10 +20,8 @@ num2=$3
 fi
 
 num1=$2
-num=$(echo "$1" | tr ':' '=')
-
-result=$(echo "if($num2 > $num1) 1 else 0" | bc)
-if ((result == 1)); then
+num=$(echo "if($num2 > $num1) 1 else 0" | bc)
+if (result == 1)); then
 numcp=$num1
 num1=$num2
 num2=$numcp
@@ -34,13 +32,13 @@ echo "$num$num1*$num2"
 
 if [ $# -ne 1 ]
 then
-echo 'Usage: factors <file>'
+echo 'Usage: rsa <file>'
 exit 1
 else
+
 while read i
 do
 result=$(factor "$i")
 check_factor $result
-
 done < "$1"
 fi
