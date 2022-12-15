@@ -1,7 +1,7 @@
 #!/usr/bin/ env python3
 import sys
 
-def prime(n):
+def primef(n):
     if n <= 3:
         return int(n)
     if n % 2 == 0:
